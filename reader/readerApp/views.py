@@ -10,6 +10,6 @@ def reader_mahasiswa(request,npm):
             mahasiswa = Mahasiswa.objects.get(npm=npm)
         except :
             return JsonResponse({'status': 'NPM does not exist'})
-        return JsonResponse({'status':'OK', 'nama':mahasiswa.nama, 'npm':mahasiswa.npm})
+        return JsonResponse({'status':'OK', 'npm':mahasiswa.npm, 'nama':mahasiswa.nama})
     return JsonResponse({'status': 'Method Not Allowed'})
     
